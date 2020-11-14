@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-.background-gradient-blue {
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+:root {
+    --color-gradient-blue: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 }
 
 .display-flex {
@@ -15,8 +15,9 @@
 
 #faq-content {
     position: absolute;
-    height: 60vh;
-    width: 300px;
+    background-image: var(--color-gradient-blue);
+    height: 75vh;
+    width: 400px;
     right: 50px;
     bottom: 175px;
     border-radius: 10px;
@@ -28,15 +29,33 @@
 
 #faq-icon {
     position: absolute;
+    background-image: var(--color-gradient-blue);
     width: 75px;
     height: 75px;
     right: 50px;
     bottom: 50px;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+#faq-icon:hover {
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 #faq-icon svg {
     width: 50px;
     height: 50px;
     fill: white;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
